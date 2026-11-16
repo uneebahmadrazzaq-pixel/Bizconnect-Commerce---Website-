@@ -1,125 +1,184 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Bizconnect Commerce provides expert TikTok Shop, eBay and Etsy account management.">
-  <meta name="theme-color" content="#070707">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="Bizconnect Commerce manages TikTok Shop, eBay and Etsy accounts for ecommerce businesses.">
+  <meta name="theme-color" content="#080808">
+  <meta property="og:title" content="Bizconnect Commerce | Marketplace Account Management">
+  <meta property="og:description" content="Practical account management for TikTok Shop, eBay and Etsy.">
   <meta property="og:image" content="assets/bizconnect-logo.jpg">
-  <title>Bizconnect Commerce | Marketplace Management</title>
-  <script>document.documentElement.classList.remove("no-js")</script>
+  <title>Bizconnect Commerce | Marketplace Account Management</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-  <header>
-    <div class="container nav">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
       <a class="brand" href="#top" aria-label="Bizconnect Commerce home">
         <img src="assets/bizconnect-mark.png" alt="">
-        <span><b>BIZCONNECT</b><small>COMMERCE</small></span>
+        <span><strong>BIZCONNECT</strong><small>COMMERCE</small></span>
       </a>
-      <button class="menu" type="button" aria-label="Open menu" aria-expanded="false"><i></i><i></i></button>
-      <nav aria-label="Main navigation"><a href="#services">Services</a><a href="#process">Process</a><a href="#about">About</a><a href="#mc011">MC011</a><a class="nav-button" href="#contact">Let's talk <span>↗</span></a></nav>
+      <button class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav"><span></span><span></span></button>
+      <nav id="site-nav" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#working">How we work</a>
+        <a href="#about">About</a>
+        <a href="#mc011">Client portal</a>
+        <a class="nav-contact" href="#contact">Contact us</a>
+      </nav>
     </div>
   </header>
 
   <main id="main">
     <section class="hero" id="top">
-      <div class="container hero-grid">
+      <div class="container hero-layout">
         <div class="hero-copy">
-          <div class="kicker hero-item"><i></i>Marketplace growth partner</div>
-          <h1 class="hero-item">Your marketplace.<br><em>Managed to grow.</em></h1>
-          <p class="hero-item">We manage TikTok Shop, eBay and Etsy accounts from daily operations to long-term growth—so you can focus on the bigger business.</p>
-          <div class="hero-actions hero-item"><a class="button orange" href="#contact">Start a conversation <span>↗</span></a><a class="link-button" href="#services">View services <span>↓</span></a></div>
-          <div class="hero-proof hero-item"><span><b>End-to-end</b> management</span><span><b>Platform-first</b> expertise</span><span><b>Clear</b> reporting</span></div>
-        </div>
-        <div class="hero-visual hero-item" aria-label="Supported marketplaces">
-          <div class="visual-top"><span>MARKETPLACE COVERAGE</span><span class="online"><i></i> ACTIVE</span></div>
-          <div class="platform-stack">
-            <article><div class="logo-box tiktok-box"><img src="assets/tiktok.svg" alt="TikTok"></div><div><h3>TikTok Shop</h3><p>Creators, campaigns and daily operations</p></div><span>01</span></article>
-            <article><div class="logo-box ebay-box"><img src="assets/ebay.svg" alt="eBay"></div><div><h3>eBay</h3><p>Listings, promotions and account health</p></div><span>02</span></article>
-            <article><div class="logo-box etsy-box"><img src="assets/etsy.svg" alt="Etsy"></div><div><h3>Etsy</h3><p>SEO, storefront and product growth</p></div><span>03</span></article>
+          <div class="platform-labels" aria-label="Platforms supported"><span>TikTok Shop</span><span>eBay</span><span>Etsy</span></div>
+          <h1>Marketplace account management for businesses that need the work done.</h1>
+          <p>Bizconnect Commerce handles the day-to-day work behind your TikTok Shop, eBay or Etsy account—from listings and customer messages to campaigns, creators and account health.</p>
+          <div class="hero-actions">
+            <a class="button primary-button" href="#contact">Discuss your account</a>
+            <a class="plain-link" href="#services">See what we manage <span>↓</span></a>
           </div>
-          <div class="visual-footer"><span>One focused team</span><b>Three growth channels</b></div>
+          <p class="availability"><i></i>Accepting new account-management enquiries</p>
         </div>
+
+        <aside class="operations-card" aria-label="Account management overview">
+          <div class="operations-head"><div><small>ACCOUNT OPERATIONS</small><h2>What gets managed</h2></div><span>Weekly</span></div>
+          <ul class="operations-list">
+            <li><span class="check">✓</span><div><b>Listings and catalogue</b><small>Titles, images, descriptions, keywords and product data</small></div></li>
+            <li><span class="check">✓</span><div><b>Orders and customers</b><small>Daily monitoring, messages, returns and issue resolution</small></div></li>
+            <li><span class="check">✓</span><div><b>Campaigns and promotions</b><small>Planning, setup, monitoring and ongoing improvements</small></div></li>
+            <li><span class="check">✓</span><div><b>Account health</b><small>Policy checks, performance issues and corrective actions</small></div></li>
+          </ul>
+          <div class="operations-foot"><span>One team</span><span>Clear priorities</span><span>Regular updates</span></div>
+        </aside>
       </div>
     </section>
 
-    <section class="platform-band" aria-label="Platforms we manage">
-      <div class="container"><span>Built for</span><div><img src="assets/tiktok.svg" alt=""><b>TikTok Shop</b></div><i></i><div><img src="assets/ebay.svg" alt=""><b>eBay</b></div><i></i><div><img src="assets/etsy.svg" alt=""><b>Etsy</b></div><span>Managed by Bizconnect</span></div>
+    <section class="platform-strip" aria-label="Supported platforms">
+      <div class="container">
+        <p>Account management across</p>
+        <div><img src="assets/tiktok.svg" alt="TikTok logo"><span>TikTok Shop</span></div>
+        <div><img src="assets/ebay.svg" alt="eBay logo"><span>eBay</span></div>
+        <div><img src="assets/etsy.svg" alt="Etsy logo"><span>Etsy</span></div>
+      </div>
     </section>
 
     <section class="section services" id="services">
       <div class="container">
-        <div class="section-title reveal"><div><div class="kicker"><i></i>Our services</div><h2>Specialist management.<br><em>Built for results.</em></h2></div><p>Every account gets a clear plan, daily attention and practical work focused on sustainable marketplace growth.</p></div>
-        <div class="service-grid">
-          <article class="service-card reveal">
-            <div class="card-head"><img src="assets/tiktok.svg" alt="TikTok logo"><span>01</span></div>
-            <h3>TikTok Shop Management</h3><p>Turn short-form discovery into an organized sales channel with strong listings, creator collaboration and reliable fulfillment.</p>
-            <ul><li>Shop setup and optimization</li><li>Product listings and SEO</li><li>Affiliate creator outreach</li><li>Campaign and order operations</li></ul>
-            <a href="#contact">Discuss TikTok Shop <span>↗</span></a>
+        <div class="section-intro">
+          <p class="section-label">Services</p>
+          <h2>Choose the marketplace. We handle the account.</h2>
+          <p>Each service is adapted to the current state of your store. We start with the urgent work, establish a reliable operating routine and then focus on growth.</p>
+        </div>
+
+        <div class="service-list">
+          <article class="service-row">
+            <div class="service-name"><span>01</span><img src="assets/tiktok.svg" alt=""><h3>TikTok Shop</h3></div>
+            <p>For brands building a sales channel around content, affiliates and fast-moving campaigns.</p>
+            <ul><li>Shop setup and catalogue</li><li>Affiliate and creator outreach</li><li>Campaign management</li><li>Orders and account health</li></ul>
+            <a href="#contact" aria-label="Ask about TikTok Shop management">Ask about this service <span>↗</span></a>
           </article>
-          <article class="service-card reveal">
-            <div class="card-head ebay-logo"><img src="assets/ebay.svg" alt="eBay logo"><span>02</span></div>
-            <h3>eBay Account Management</h3><p>Improve visibility, buyer confidence and account performance through better listings and disciplined operations.</p>
-            <ul><li>Store setup and design</li><li>Listing optimization</li><li>Promoted listings</li><li>Customer service and health</li></ul>
-            <a href="#contact">Discuss eBay <span>↗</span></a>
+
+          <article class="service-row">
+            <div class="service-name ebay-service"><span>02</span><img src="assets/ebay.svg" alt=""><h3>eBay</h3></div>
+            <p>For sellers who need stronger listings, dependable operations and closer control of account performance.</p>
+            <ul><li>Store and listing setup</li><li>Search optimization</li><li>Promoted listings</li><li>Customers and seller health</li></ul>
+            <a href="#contact" aria-label="Ask about eBay management">Ask about this service <span>↗</span></a>
           </article>
-          <article class="service-card reveal">
-            <div class="card-head etsy-logo"><img src="assets/etsy.svg" alt="Etsy logo"><span>03</span></div>
-            <h3>Etsy Shop Management</h3><p>Build a more discoverable creative storefront through thoughtful positioning, research and marketplace SEO.</p>
-            <ul><li>Shop branding and setup</li><li>Etsy SEO and research</li><li>Listing creation</li><li>Ads and growth strategy</li></ul>
-            <a href="#contact">Discuss Etsy <span>↗</span></a>
+
+          <article class="service-row">
+            <div class="service-name"><span>03</span><img src="assets/etsy.svg" alt=""><h3>Etsy</h3></div>
+            <p>For creative businesses that need a more discoverable shop and a consistent listing process.</p>
+            <ul><li>Shop setup and branding</li><li>Keyword research</li><li>Listing creation</li><li>Ads and performance review</li></ul>
+            <a href="#contact" aria-label="Ask about Etsy management">Ask about this service <span>↗</span></a>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section approach" id="about">
-      <div class="container approach-grid">
-        <div class="brand-panel reveal"><img src="assets/bizconnect-mark.png" alt="Bizconnect Commerce mark"><div><b>BIZCONNECT</b><span>COMMERCE</span></div></div>
-        <div class="approach-copy reveal"><div class="kicker"><i></i>The Bizconnect difference</div><h2>Not just maintained.<br><em>Actively managed.</em></h2><p>Marketplaces move quickly. Our job is to stay close to the account, solve issues early and keep pushing the commercial work forward.</p>
-          <div class="values"><div><span>01</span><b>Specialist focus</b><p>Platform-specific knowledge applied to your account.</p></div><div><span>02</span><b>Commercial thinking</b><p>Decisions connected to growth, margin and customer trust.</p></div><div><span>03</span><b>Visible ownership</b><p>Clear priorities, responsive communication and dependable execution.</p></div></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section process" id="process">
+    <section class="section working" id="working">
       <div class="container">
-        <div class="section-title reveal"><div><div class="kicker"><i></i>How it works</div><h2>A clear route from<br><em>audit to scale.</em></h2></div><p>No vague activity. You know what we are doing, why it matters and what comes next.</p></div>
-        <div class="steps">
-          <article class="reveal"><span>01</span><div><small>DISCOVER</small><h3>Audit the opportunity</h3><p>We review your account, catalogue, competitors and commercial goals.</p></div></article>
-          <article class="reveal"><span>02</span><div><small>BUILD</small><h3>Create the system</h3><p>We define priorities, optimize the storefront and establish workflows.</p></div></article>
-          <article class="reveal"><span>03</span><div><small>OPERATE</small><h3>Manage the details</h3><p>We handle listings, campaigns, customers, creators and account health.</p></div></article>
-          <article class="reveal"><span>04</span><div><small>GROW</small><h3>Improve what works</h3><p>We use performance data to test, refine and compound progress.</p></div></article>
+        <div class="section-intro compact">
+          <p class="section-label">How we work</p>
+          <h2>A straightforward working relationship.</h2>
+          <p>No inflated reports or vague activity. You receive a clear plan, regular communication and visibility into the work being completed.</p>
+        </div>
+        <ol class="work-steps">
+          <li><span>1</span><div><h3>Account review</h3><p>We review the store, catalogue, performance, current issues and your commercial priorities.</p></div></li>
+          <li><span>2</span><div><h3>First 30-day plan</h3><p>We agree the immediate fixes, recurring tasks, access requirements and reporting routine.</p></div></li>
+          <li><span>3</span><div><h3>Ongoing management</h3><p>We execute the work, flag risks early and keep the next priorities visible.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="container about-layout">
+        <div class="about-brand">
+          <img src="assets/bizconnect-mark.png" alt="Bizconnect Commerce mark">
+          <div><strong>BIZCONNECT</strong><span>COMMERCE</span></div>
+        </div>
+        <div class="about-copy">
+          <p class="section-label">About Bizconnect</p>
+          <h2>Practical support for the parts of ecommerce that take time.</h2>
+          <p>Marketplace accounts need consistent attention. Small listing errors, unanswered messages and account-health warnings can quickly become expensive problems.</p>
+          <p>Bizconnect Commerce gives clients one accountable team for those details. Our role is to keep the account organized, communicate clearly and improve performance without losing control of day-to-day operations.</p>
+          <div class="about-points"><span>Platform-specific work</span><span>Direct communication</span><span>Documented priorities</span><span>Long-term account care</span></div>
         </div>
       </div>
     </section>
 
     <section class="section portal" id="mc011">
-      <div class="container portal-grid">
-        <div class="portal-copy reveal"><div class="kicker"><i></i>Client space • MC011</div><h2>Share your<br><em>experience.</em></h2><p>Existing clients can select their service, attach a video and leave direct feedback for the Bizconnect Commerce team.</p><div class="privacy"><span>✓</span><div><b>Private draft</b><small>Your file stays on this device until secure cloud storage is connected.</small></div></div></div>
-        <form id="feedback-form" class="upload-panel reveal" novalidate>
-          <div class="form-head"><div><small>MC011 / CLIENT PORTAL</small><h3>Client feedback</h3></div><span>SECURE</span></div>
-          <div class="field-row"><label>Full name<input name="name" autocomplete="name" placeholder="Your name" required></label><label>Email<input type="email" name="email" autocomplete="email" placeholder="you@company.com" required></label></div>
-          <label>Service<select name="service" required><option value="">Choose a service</option><option>TikTok Shop Management</option><option>eBay Account Management</option><option>Etsy Shop Management</option><option>Multiple services</option></select></label>
-          <label>Feedback<textarea name="feedback" rows="4" placeholder="Tell us what worked well and what we can improve…" required></textarea></label>
-          <div class="drop-zone" id="drop-zone" tabindex="0" role="button"><input type="file" id="video-file" accept="video/mp4,video/webm,video/quicktime" hidden><span>↑</span><div><b>Drop a video or <u>browse</u></b><small>MP4, MOV or WebM • maximum 100 MB</small></div></div>
-          <div class="file-preview" id="file-preview" hidden><span>▶</span><div><b id="file-name"></b><small id="file-size"></small></div><button type="button" id="remove-file" aria-label="Remove file">×</button></div>
-          <label class="consent"><input type="checkbox" required><span>I confirm this feedback is genuine and may be reviewed by Bizconnect Commerce.</span></label>
-          <button class="button orange submit" type="submit">Prepare submission <span>↗</span></button><p class="status" id="form-status" role="status"></p>
+      <div class="container portal-layout">
+        <div class="portal-copy">
+          <p class="section-label">MC011 client portal</p>
+          <h2>Send feedback or a video to the team.</h2>
+          <p>This area is for existing clients. Select the service you use, write your feedback and attach a video if needed.</p>
+          <div class="portal-note"><span>Important</span><p>Video upload is currently in preview mode. Your draft is saved only on this device until secure cloud storage is connected.</p></div>
+        </div>
+
+        <form id="feedback-form" class="feedback-form" novalidate>
+          <div class="form-title"><div><small>CLIENT FEEDBACK</small><h3>MC011 submission</h3></div><span>Draft mode</span></div>
+          <div class="field-grid">
+            <label>Full name<input name="name" autocomplete="name" placeholder="Your name" required></label>
+            <label>Email address<input type="email" name="email" autocomplete="email" placeholder="you@company.com" required></label>
+          </div>
+          <label>Service<select name="service" required><option value="">Select a service</option><option>TikTok Shop Management</option><option>eBay Account Management</option><option>Etsy Shop Management</option><option>Multiple services</option></select></label>
+          <label>Feedback<textarea name="feedback" rows="5" placeholder="Write your feedback here…" required></textarea></label>
+          <div class="drop-zone" id="drop-zone" tabindex="0" role="button" aria-label="Choose a video"><input type="file" id="video-file" accept="video/mp4,video/webm,video/quicktime" hidden><span>↑</span><div><b>Choose a video or drop it here</b><small>MP4, MOV or WebM — up to 100 MB</small></div></div>
+          <div class="file-preview" id="file-preview" hidden><span>▶</span><div><b id="file-name"></b><small id="file-size"></small></div><button type="button" id="remove-file" aria-label="Remove selected file">Remove</button></div>
+          <label class="consent"><input type="checkbox" required><span>I confirm this feedback is genuine and may be reviewed by the Bizconnect Commerce team.</span></label>
+          <button class="button primary-button form-submit" type="submit">Save feedback draft</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
     </section>
 
-    <section class="section contact" id="contact"><div class="container contact-card reveal"><img src="assets/bizconnect-mark.png" alt=""><div><div class="kicker"><i></i>Start a conversation</div><h2>Ready to grow the right way?</h2><p>Tell us which marketplace matters most and where you want the account to go.</p></div><a class="button orange" href="mailto:hello@bizconnectcommerce.com?subject=Marketplace%20management%20enquiry">Email Bizconnect <span>↗</span></a></div></section>
+    <section class="section contact" id="contact">
+      <div class="container contact-layout">
+        <div><p class="section-label">Contact</p><h2>Tell us what you need help managing.</h2><p>Include your marketplace, the current state of the account and the main issue you want solved.</p></div>
+        <a class="button primary-button" href="mailto:hello@bizconnectcommerce.com?subject=Account%20management%20enquiry">hello@bizconnectcommerce.com</a>
+      </div>
+    </section>
   </main>
 
-  <footer><div class="container footer-main"><a class="brand" href="#top"><img src="assets/bizconnect-mark.png" alt=""><span><b>BIZCONNECT</b><small>COMMERCE</small></span></a><p>TikTok Shop, eBay and Etsy account management for ambitious ecommerce brands.</p><div><a href="#services">Services</a><a href="#process">Process</a><a href="#mc011">MC011</a><a href="mailto:hello@bizconnectcommerce.com">Contact</a></div></div><div class="container footer-bottom"><span>© <span id="year"></span> Bizconnect Commerce</span><a href="#top">Back to top ↑</a></div></footer>
-  <div class="toast" id="toast" role="status"></div>
+  <footer>
+    <div class="container footer-layout">
+      <a class="brand" href="#top"><img src="assets/bizconnect-mark.png" alt=""><span><strong>BIZCONNECT</strong><small>COMMERCE</small></span></a>
+      <p>TikTok Shop, eBay and Etsy account management.</p>
+      <div class="footer-links"><a href="#services">Services</a><a href="#working">How we work</a><a href="#mc011">Client portal</a><a href="#contact">Contact</a></div>
+    </div>
+    <div class="container footer-bottom"><span>© <span id="year"></span> Bizconnect Commerce</span><a href="#top">Back to top</a></div>
+  </footer>
+
+  <div class="mobile-contact"><a href="#contact">Contact Bizconnect</a></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="script.js" defer></script>
 </body>
 </html>
