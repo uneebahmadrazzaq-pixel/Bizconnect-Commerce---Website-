@@ -1,49 +1,105 @@
-document.body.classList.add("js-ready");
-const menu=document.querySelector(".menu");
-const nav=document.querySelector("nav");
-menu.addEventListener("click",function(){const open=nav.classList.toggle("open");menu.setAttribute("aria-expanded",String(open));menu.setAttribute("aria-label",open?"Close menu":"Open menu");document.body.classList.toggle("lock",open)});
-nav.querySelectorAll("a").forEach(function(link){link.addEventListener("click",function(){nav.classList.remove("open");menu.setAttribute("aria-expanded","false");document.body.classList.remove("lock")})});
+const header=document.querySelector(".site-header");
+const menuButton=document.querySelector(".menu-button");
+const navigation=document.querySelector("#site-nav");
+const mobileContact=document.querySelector(".mobile-contact");
 
-const revealElements=document.querySelectorAll(".reveal");
-if("IntersectionObserver" in window){
-  const observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target)}})},{threshold:.08,rootMargin:"0px 0px -30px 0px"});
-  revealElements.forEach(function(element){observer.observe(element)});
-  window.setTimeout(function(){revealElements.forEach(function(element){element.classList.add("visible")})},1600);
-}else{revealElements.forEach(function(element){element.classList.add("visible")})}
+function closeMenu(){
+  navigation.classList.remove("open");
+  menuButton.setAttribute("aria-expanded","false");
+  menuButton.setAttribute("aria-label","Open navigation");
+  document.body.classList.remove("menu-open");
+}
+menuButton.addEventListener("click",function(){
+  const open=navigation.classList.toggle("open");
+  menuButton.setAttribute("aria-expanded",String(open));
+  menuButton.setAttribute("aria-label",open?"Close navigation":"Open navigation");
+  document.body.classList.toggle("menu-open",open);
+});
+navigation.querySelectorAll("a").forEach(function(link){link.addEventListener("click",closeMenu)});
+document.addEventListener("keydown",function(event){if(event.key==="Escape")closeMenu()});
+
+function updateScrollUI(){
+  header.classList.toggle("scrolled",window.scrollY>30);
+  mobileContact.classList.toggle("visible",window.scrollY>420);
+}
+window.addEventListener("scroll",updateScrollUI,{passive:true});
+updateScrollUI();
 
 document.querySelector("#year").textContent=new Date().getFullYear();
-const zone=document.querySelector("#drop-zone");
-const input=document.querySelector("#video-file");
+
+const dropZone=document.querySelector("#drop-zone");
+const fileInput=document.querySelector("#video-file");
 const preview=document.querySelector("#file-preview");
-const nameOut=document.querySelector("#file-name");
-const sizeOut=document.querySelector("#file-size");
-const remove=document.querySelector("#remove-file");
+const fileName=document.querySelector("#file-name");
+const fileSize=document.querySelector("#file-size");
+const removeFile=document.querySelector("#remove-file");
 const form=document.querySelector("#feedback-form");
-const status=document.querySelector("#form-status");
+const formStatus=document.querySelector("#form-status");
 const toast=document.querySelector("#toast");
 const maxSize=100*1024*1024;
 let selectedFile=null;
 
-function notify(message){toast.textContent=message;toast.classList.add("show");window.setTimeout(function(){toast.classList.remove("show")},2800)}
-function showFile(file){
-  status.textContent="";status.classList.remove("error");
-  if(!file)return;
-  if(!file.type||file.type.indexOf("video/")!==0){status.textContent="Please choose a valid video file.";status.classList.add("error");return}
-  if(file.size>maxSize){status.textContent="That video is larger than 100 MB.";status.classList.add("error");return}
-  selectedFile=file;nameOut.textContent=file.name;sizeOut.textContent=(file.size/1024/1024).toFixed(1)+" MB";preview.hidden=false
+function showToast(message){
+  toast.textContent=message;
+  toast.classList.add("show");
+  window.setTimeout(function(){toast.classList.remove("show")},2800);
 }
-zone.addEventListener("click",function(){input.click()});
-zone.addEventListener("keydown",function(event){if(event.key==="Enter"||event.key===" "){event.preventDefault();input.click()}});
-input.addEventListener("change",function(){showFile(input.files[0])});
-["dragenter","dragover"].forEach(function(type){zone.addEventListener(type,function(event){event.preventDefault();zone.classList.add("dragging")})});
-["dragleave","drop"].forEach(function(type){zone.addEventListener(type,function(event){event.preventDefault();zone.classList.remove("dragging")})});
-zone.addEventListener("drop",function(event){showFile(event.dataTransfer.files[0])});
-remove.addEventListener("click",function(){selectedFile=null;input.value="";preview.hidden=true;status.textContent=""});
+function displayFile(file){
+  formStatus.textContent="";
+  formStatus.classList.remove("error");
+  if(!file)return;
+  if(!file.type||file.type.indexOf("video/")!==0){
+    formStatus.textContent="Please choose an MP4, MOV or WebM video.";
+    formStatus.classList.add("error");
+    return;
+  }
+  if(file.size>maxSize){
+    formStatus.textContent="The selected video is larger than 100 MB.";
+    formStatus.classList.add("error");
+    return;
+  }
+  selectedFile=file;
+  fileName.textContent=file.name;
+  fileSize.textContent=(file.size/1024/1024).toFixed(1)+" MB";
+  preview.hidden=false;
+}
+dropZone.addEventListener("click",function(){fileInput.click()});
+dropZone.addEventListener("keydown",function(event){
+  if(event.key==="Enter"||event.key===" "){event.preventDefault();fileInput.click()}
+});
+fileInput.addEventListener("change",function(){displayFile(fileInput.files[0])});
+["dragenter","dragover"].forEach(function(type){
+  dropZone.addEventListener(type,function(event){event.preventDefault();dropZone.classList.add("dragging")});
+});
+["dragleave","drop"].forEach(function(type){
+  dropZone.addEventListener(type,function(event){event.preventDefault();dropZone.classList.remove("dragging")});
+});
+dropZone.addEventListener("drop",function(event){displayFile(event.dataTransfer.files[0])});
+removeFile.addEventListener("click",function(){
+  selectedFile=null;
+  fileInput.value="";
+  preview.hidden=true;
+  formStatus.textContent="";
+});
 form.addEventListener("submit",function(event){
-  event.preventDefault();status.classList.remove("error");
-  if(!form.checkValidity()){status.textContent="Please complete the required fields.";status.classList.add("error");form.reportValidity();return}
+  event.preventDefault();
+  formStatus.classList.remove("error");
+  if(!form.checkValidity()){
+    formStatus.textContent="Please complete all required fields.";
+    formStatus.classList.add("error");
+    form.reportValidity();
+    return;
+  }
   const data=new FormData(form);
-  const submission={name:data.get("name"),email:data.get("email"),service:data.get("service"),feedback:data.get("feedback"),videoName:selectedFile?selectedFile.name:"No video attached",createdAt:new Date().toISOString()};
-  localStorage.setItem("bizconnect-mc011-draft",JSON.stringify(submission));
-  status.textContent="Feedback draft saved on this device.";notify("Feedback draft prepared successfully")
+  const draft={
+    name:data.get("name"),
+    email:data.get("email"),
+    service:data.get("service"),
+    feedback:data.get("feedback"),
+    videoName:selectedFile?selectedFile.name:"No video attached",
+    createdAt:new Date().toISOString()
+  };
+  localStorage.setItem("bizconnect-mc011-draft",JSON.stringify(draft));
+  formStatus.textContent="Draft saved on this device.";
+  showToast("Feedback draft saved");
 });
